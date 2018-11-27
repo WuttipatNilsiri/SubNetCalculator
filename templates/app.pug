@@ -1,0 +1,55 @@
+
+
+form(method='get' , action='/set')
+    input( type="submit" name='mode' value="host" )
+    input( type="submit" name='mode' value="network" )
+
+
+  
+
+form(method='GET', action='/cal')
+   
+    label IP
+    input(type='text' name='IP' value=IP)
+
+    if host
+
+        label Host#
+        input(type='number' name='hostNumber' value=hostNum)
+
+    else 
+        
+        label Network#
+        input(type='number' name='netNumber' value=netNum)
+
+    label Sample#
+    input(type='number' name='sampleNumber' value=samNum)
+
+    button(type='summit') calculate
+    
+
+hr
+if info 
+    p= info
+table.table
+            if resultarray
+              thead
+                tr
+                    th NetID
+                    th host 1st
+                    th host last
+                    th broadcast
+              tbody
+                
+                for x in resultarray
+                 
+
+                 tr
+                  
+                  td #{x[0]}
+                  td #{x[1]}
+                  td #{x[-2]}
+                  td #{x[-1]}
+                    
+
+//- for x in resultarray
