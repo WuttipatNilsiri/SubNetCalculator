@@ -261,7 +261,7 @@ class subnetCal(object):
         
     def calSuperShort(self,sampleNum):
 
-        if (self.hostNum < 0):
+        if (self.hostNum < 1):
             raise ValueError('fix= '+ str(self.fix) + ' netNum= '+ str(self.netNum) + ' hostNum= '+str(self.hostNum) + " =>impossibe") 
         
         subnetID = itertools.product(possible_values, repeat=self.netNum)
