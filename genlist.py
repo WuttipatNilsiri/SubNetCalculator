@@ -276,7 +276,7 @@ class subnetCal(object):
         u = joinpossibe([IPtolist(splitClass(self.IP,self.c))],listres)
 
         array = []
-        if len(u) < sampleNum:
+        if len(u) <= sampleNum:
             sampleNum = len(u)-1
         for i in list(range(sampleNum)) + [-1]:
             # key = toString(listdivide8(x))
@@ -302,7 +302,8 @@ class subnetCal(object):
             '\nmask: '+str(toString(listdivide8(self.mask))) +
             '\nnetID (Bit): '+str(self.fix)+
             '\nsubnet (Bit): '+str(self.netNum)+
-            '\nhost (Bit): '+str(self.hostNum)
+            '\nhost (Bit): '+str(self.hostNum) +
+            '\ntotal subnet: '+str(2**self.netNum)
         )
 
 def run(IP,netNumber,sampleNum):

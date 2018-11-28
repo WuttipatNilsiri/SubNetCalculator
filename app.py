@@ -41,7 +41,7 @@ def cal():
         try:
             ipaddress.ip_address(IP)
         except ValueError:
-            return render_template('app.pug', error='IP error' , IP='160.10.0.0' , hostNum=10 , samNum=3)
+            return render_template('app.pug', error='IP error' , IP='160.10.0.0' , netNum=10 , samNum=3)
 
 
         c , fix = genlist.defClass(IP)
@@ -55,7 +55,7 @@ def cal():
         try:
             s , a , info = genlist.run(str(IP),int(netNum),int(samNum))
         except ValueError:
-            return render_template('app.pug', error='#value error', IP='160.10.0.0' , hostNum=10 , samNum=3 )
+            return render_template('app.pug', error='#value error', IP='160.10.0.0' , netNum=10 , samNum=3 )
         
         if hostNum:
             return render_template('app.pug', resultarray=a , IP=IP , samNum=samNum , info=info , hostNum=hostNum , host='on')
